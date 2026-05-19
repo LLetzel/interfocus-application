@@ -10,6 +10,8 @@ from knowledge_base import knowledge_base
 # tratativa de pontuação e caracteres especiais para melhor comparação dos textos
 import re
 
+import os
+
 # Framework para criar API REST - Acessado pelo react(consulta de documentação: https://flask.palletsprojects.com/)
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -106,11 +108,14 @@ def health():
 
     return jsonify({'status': 'ok', 'mensagem': 'Chatbot Interfocus está ativo'}), 200
 
-
 if __name__ == '__main__':
     print("=== CHATBOT INTERFOCUS API ===")
-    print("🚀 Servidor rodando em http://localhost:5000")
+    print("🚀 Servidor iniciando...")
     print("📡 Endpoint: POST /chat")
     print("✅ CORS habilitado para React\n")
-    
-    app.run(debug=True, host='localhost', port=5000)
+
+    app.run(
+        host='0.0.0.0',
+        port=int(os.environ.get("PORT", 5000)),
+        debug=False
+    )
