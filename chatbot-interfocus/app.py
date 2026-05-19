@@ -110,12 +110,20 @@ def health():
 
 if __name__ == '__main__':
     print("=== CHATBOT INTERFOCUS API ===")
-    print("🚀 Servidor iniciando...")
-    print("📡 Endpoint: POST /chat")
-    print("✅ CORS habilitado para React\n")
+    print(" Servidor iniciando...")
+    print(" Endpoint: POST /chat")
+    print(" CORS habilitado para React\n")
 
     app.run(
         host='0.0.0.0',
         port=int(os.environ.get("PORT", 5000)),
         debug=False
-    )
+    )   
+
+# if __name__ == '__main__':
+#     print("=== CHATBOT INTERFOCUS API ===")
+#     print("🚀 Servidor rodando em http://localhost:5000")
+#     print("📡 Endpoint: POST /chat")
+#     print("✅ CORS habilitado para React\n")
+    
+#     app.run(debug=True, host='localhost', port=5000)
