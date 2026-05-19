@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 // Configuração da API
-const API_URL = 'http://localhost:5000' || 'https://chatbot-interfocus.onrender.com'
+// const API_URL = 'http://localhost:5000' 
+const API_URL = 'https://chatbot-interfocus.onrender.com'
 
 
 function App() {
