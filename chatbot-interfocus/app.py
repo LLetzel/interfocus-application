@@ -72,7 +72,7 @@ def responder_usuario(mensagem_usuario): #chatbot função principal
     
     if confianca < 0.3:
         return (
-            "Não consegui identificar seu problema, consegue descrever de outra forma? Se preferir, posso encaminhar para um atendente. N: 1499999999 "
+            "Não consegui identificar/resolver seu problema, consegue descrever de outra forma? Se preferir, posso encaminhar para um atendente. N: 1499999999 "
         )
 
     
@@ -108,22 +108,22 @@ def health():
 
     return jsonify({'status': 'ok', 'mensagem': 'Chatbot Interfocus está ativo'}), 200
 
-if __name__ == '__main__':
-    print("=== CHATBOT INTERFOCUS API ===")
-    print(" Servidor iniciando...")
-    print(" Endpoint: POST /chat")
-    print(" CORS habilitado para React\n")
-
-    app.run(
-        host='0.0.0.0',
-        port=int(os.environ.get("PORT", 5000)),
-        debug=False
-    )   
-
 # if __name__ == '__main__':
 #     print("=== CHATBOT INTERFOCUS API ===")
-#     print("🚀 Servidor rodando em http://localhost:5000")
-#     print("📡 Endpoint: POST /chat")
-#     print("✅ CORS habilitado para React\n")
+#     print(" Servidor iniciando...")
+#     print(" Endpoint: POST /chat")
+#     print(" CORS habilitado para React\n")
+
+#     app.run(
+#         host='0.0.0.0',
+#         port=int(os.environ.get("PORT", 5000)),
+#         debug=False
+#     )   
+
+if __name__ == '__main__':
+    print("=== CHATBOT INTERFOCUS API ===")
+    print("🚀 Servidor rodando em http://localhost:5000")
+    print("📡 Endpoint: POST /chat")
+    print("✅ CORS habilitado para React\n")
     
-#     app.run(debug=True, host='localhost', port=5000)
+    app.run(debug=True, host='localhost', port=5000)
